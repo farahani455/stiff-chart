@@ -80,7 +80,7 @@
           });
 
           if (count !== 0) {
-            $(this).children('.the-chart').append('<div class="total-child">' + count + ' child(s)</div>');
+            $(this).children('.the-chart').append(settings.childCounterHtml.replace('{count}',count) );
           }
         });
       }
@@ -567,6 +567,7 @@
         enableZoom: true,
         layoutType: 'vertical',
         childCounter: true,
+        childCounterHtml:'<div class="total-child">{count} child(s)</div>',
         activeClass: 'chart-active',
         bootstrapPopover: false
     };
